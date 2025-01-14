@@ -9,11 +9,14 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: "var(--font-inter)", //fonte sans é a fonte padrão que usamos em pg web, q é uma fonte sem serifa
+				sans: "var(--font-inter)",
 			},
 			colors: {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
+			},
+			gridTemplateRows: {
+				app: "min-content max-content",
 			},
 		},
 	},

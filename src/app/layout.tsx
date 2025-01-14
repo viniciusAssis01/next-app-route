@@ -13,16 +13,16 @@ const geistMono = Geist_Mono({
 }); */
 
 export const metadata: Metadata = {
-	title: "Devstore",
+	title: {
+		template: "%s | devstore",
+		default: "devstore",
+	},
 };
 
 const inter = Inter({
 	subsets: ["latin"],
 	variable: "--font-inter",
 });
-// isso faz com que ao estilizarmos um elemento via classname, possamos usar nomeDaConstante.variable > assim ele crie uma variável global no css cujo valor vai ser a fonte inter > agora lá no tailwind config, podemos adicionar essa variável como valor de uma classe utilitária.
-// assim podemos ter varias fontes, teremos uma variavelcss para cada fonte.
-// dentro do body a gente declara as fontes que vai existir em nosso projeto
 
 export default function RootLayout({
 	children,
@@ -30,8 +30,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${inter.variable} antialiased`}>{children}</body>
+		<html lang="pt" className={`${inter.variable} antialiased`}>
+			<body className="bg-zinc-950 text-zinc-50">{children}</body>
 		</html>
 	);
 }
